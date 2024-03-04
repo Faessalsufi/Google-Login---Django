@@ -1,0 +1,36 @@
+img{
+    border: 3px solid black;
+}
+
+.container-fluid{
+    height: 100vh;
+    background-color: rgb(179, 179, 179);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fluid > div {
+    width: 85%;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.card{
+    width: 100%;
+    background-color: rgb(37, 37, 37);
+}
+
+.social-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn a , .btn a:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+button{
+    color: black;
+}

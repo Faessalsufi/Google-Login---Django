@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>google login</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+                {% if user.is_authenticated %}
+                    
+                    <button class="btn btn-secondary mb-2">
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </button>
+                {% else %}
+                    <button class="btn btn-primary mb-2">
+                        <a href="{% url 'social:begin' 'google-oauth2' %}">Login With Google</a>
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+       {% block content %}{% endblock  %}
+    </div>
+</div>
+</body>
+
+</html>
